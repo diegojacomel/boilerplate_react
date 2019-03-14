@@ -21,7 +21,7 @@ const Icon = ({ tag, iconSize, iconColor, }) => (
         className={`icon icon-${tag}`}
         iconSize={iconSize}
         iconColor={iconColor}
-        data-testid="icon"
+        id="icon"
     >
         <use xlinkHref={`${iconsList}#icon-${tag}`} />
     </IconStyle>

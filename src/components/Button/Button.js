@@ -100,7 +100,7 @@ const Button = ({ children, type, color, outline, size, rounded, block, icon, ic
         iconLeft={iconLeft}
         onClick={onClick}
         disabled={disabled}
-        data-testid="button"
+        id="testButton"
     >
         <span>
             {children}

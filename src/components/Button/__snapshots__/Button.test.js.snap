@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Render correctly 1`] = `
+<button
+  className="sc-bwzfXH egfyjy"
+  color="default"
+  disabled={false}
+  id="testButton"
+  size="md"
+  type="button"
+>
+  <span>
+    Click here
+  </span>
+</button>
+`;
