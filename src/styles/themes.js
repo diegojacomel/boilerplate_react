@@ -1,49 +1,55 @@
+// Scale
+import { pxToRem } from '../utils/scale';
+
 // Themes
 const primaryTheme = {
     colors: {
-        primary: '#003366',
-        secondary: '#000000',
-        warning: '#000000',
-        danger: '#d30d30',
-        info: '#006633',
-        default: '#dddddd',
-        grayLight: '#f2f2f2',
-        grayMedium: '#dddddd',
-        grayDark: '#333333',
-        black: '#000000',
-        white: '#ffffff',
+        primary: "#54a0ff",
+        danger: "#ff6b6b",
+        info: "#48dbfb",
+        success: "#1dd1a1",
+        default: "#576574",
+        white: "#ffffff",
+        black: "#000000",
+        greyLight: "#f2f2f2",
+        greyMedium: "#999999",
+        greyDark: "#333333",
         hover: {
-            primary: '#115394',
-            secondary: '#000000',
-            warning: '#000000',
-            danger: '#d30d30',
-            info: '#006633',
-            default: '#dddddd',
-            grayLight: '#f2f2f2',
-            grayMedium: '#dddddd',
-            grayDark: '#333333',
-            black: '#000000',
-            white: '#ffffff'
+            primary: "#1a81ff",
+            danger: "#ff3333",
+            info: "#05cdfa",
+            success: "#159d79",
+            default: "#373f49",
+            white: "#f2f2f2",
+            black: "#1a1a1a"
         }
     },
     spacing: {
-        none: '0',
-        xxs: '3px',
-        xs: '5px',
-        ss: '8px',
-        sm: '10px',
-        ssm: '15px',
-        md: '20px',
-        mmd: '25px',
-        lg: '30px',
-        llg: '35px',
-        xg: '40px',
-        xxg: '50px',
-        gt: '75px',
-        ggt: '100px',
-        quarter: '25%',
-        middle: '50%',
-        full: '100%'
+        none: "0",
+        xxs: pxToRem(3),
+        xs: pxToRem(5),
+        xsm: pxToRem(8),
+        sm: pxToRem(10),
+        md: pxToRem(15),
+        lg: pxToRem(20),
+        xlg: pxToRem(25),
+        xg: pxToRem(30),
+        xxg: pxToRem(50)
+    },
+    fontSize: {
+        none: "0",
+        xs: pxToRem(12),
+        sm: pxToRem(14),
+        md: pxToRem(16),
+        lg: pxToRem(18),
+        xg: pxToRem(20),
+    },
+    rounded: {
+        none: "0",
+        sm: "3px",
+        md: "5px",
+        lg: "10px",
+        full: "100%"
     }
 }
 

@@ -1,13 +1,18 @@
 // Modules
 import React, { Component } from 'react';
 
+// Components
+import Button from '../../components/Button/Button'; 
+
 class Home extends Component {
     state = {}
 
     render() {
         return (
             <div>
-                Home
+                <Button color="primary" rounded="md">
+                    Home
+                </Button>
             </div>
         );
     }
