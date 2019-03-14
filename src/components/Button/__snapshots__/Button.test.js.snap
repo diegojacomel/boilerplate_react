@@ -6,6 +6,7 @@ exports[`Button Render correctly 1`] = `
   color="default"
   disabled={false}
   id="testButton"
+  onClick={[Function]}
   size="md"
   type="button"
 >

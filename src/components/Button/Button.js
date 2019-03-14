@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // Components
 import Icon from '../Icon/Icon';
+import { Link } from 'react-router-dom';
 
 // Styles
 import styled from "styled-components";
@@ -57,7 +58,7 @@ const SizeButton = (props) => {
     }
 }
 
-const ButtonStyle = styled.button`
+const ButtonStyle = styled('button')`
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -89,7 +90,12 @@ const ButtonStyle = styled.button`
     }
 `;
 
-const Button = ({ children, type, color, outline, size, rounded, block, icon, iconSize, iconColor, iconLeft, disabled, onClick }) => (
+const LinkStyle = styled(Link)`
+    text-decoration: none;
+    color: inherit;
+`
+
+const Button = ({ children, type, color, outline, size, rounded, block, icon, iconSize, iconColor, iconLeft, disabled, onClick, linkTo }) => (
     <ButtonStyle
         type={type}
         color={color}
@@ -102,15 +108,30 @@ const Button = ({ children, type, color, outline, size, rounded, block, icon, ic
         disabled={disabled}
         id="testButton"
     >
-        <span>
-            {children}
-            {icon
-                ?
-                <Icon tag={icon} iconSize={iconSize} iconColor={iconColor} />
-                :
-                null
-            }
-        </span>
+        {!!linkTo
+            ?
+            <LinkStyle id="testLinkButton" to={linkTo}>
+                <span>
+                    {children}
+                    {icon
+                        ?
+                        <Icon tag={icon} iconSize={iconSize} iconColor={iconColor} />
+                        :
+                        null
+                    }
+                </span>
+            </LinkStyle>
+            :
+            <span>
+                {children}
+                {icon
+                    ?
+                    <Icon tag={icon} iconSize={iconSize} iconColor={iconColor} />
+                    :
+                    null
+                }
+            </span>
+        }
     </ButtonStyle>
 );
 
@@ -125,6 +146,7 @@ Button.propTypes = {
     iconSize: PropTypes.string,
     iconColor: PropTypes.string,
     disabled: PropTypes.bool,
+    linkTo: PropTypes.string,
     onClick: PropTypes.func
 }
 
@@ -135,7 +157,9 @@ Button.defaultProps = {
     size: 'md',
     rounded: 'sm',
     block: false,
-    disabled: false
+    disabled: false,
+    linkTo: null,
+    onClick: () => console.log('clicked button')
 }
 
 export default Button;
