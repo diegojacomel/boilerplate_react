@@ -4,12 +4,14 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const InputStyled = styled('input')`
-    display: inline-block;
-    outline: none;
-    padding: 6px 12px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #cccccc;
+    &[type='text'] {
+        display: inline-block;
+        outline: none;
+        padding: 8px 12px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+    }
 `
 
 const Input = ({ type, name, onChange, onBlur, onKeyUp, placeholder, value, disabled, id, ...rest }) => (
