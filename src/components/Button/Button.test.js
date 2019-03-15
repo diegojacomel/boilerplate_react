@@ -10,6 +10,9 @@ import { primaryTheme } from '../../styles/themes';
 // Component
 import Button from './Button';
 
+// Services
+import { ExampleService } from '../../services';
+
 describe('Button', () => {
     const wrapper = shallow(<Button>Click here</Button>);
 
@@ -50,5 +53,11 @@ describe('Button', () => {
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
+    })
+    
+    it('Test API', async () => {
+        const data = await ExampleService.products();
+
+        expect(data).toBeDefined()
     })
 })

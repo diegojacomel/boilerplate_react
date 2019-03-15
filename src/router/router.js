@@ -16,6 +16,7 @@ class MyRouter extends Component {
             <Fragment>
                 <Switch>
                     <Route exact path="/" component={routerComponents['Home']} />
+                    <Route exact path="/register" component={routerComponents['Register']} />
                 </Switch>
             </Fragment>
         )

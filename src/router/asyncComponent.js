@@ -1,7 +1,7 @@
 // Modules
 import React, { Component } from "react";
 
-export default function asyncComponent(importComponent) {
+function asyncComponent(importComponent) {
   class AsyncComponent extends Component {
     state = {
       component: null
@@ -24,3 +24,5 @@ export default function asyncComponent(importComponent) {
 
   return AsyncComponent;
 }
+
+export default asyncComponent;
