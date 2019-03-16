@@ -5,8 +5,17 @@ import {
 
 const INITIAL_STATE = {
     register: {
-        name: '',
-        email: ''
+        firstName: '',
+        lastName: '',
+        age: 0,
+        email: '',
+        phone: '',
+        uf: '',
+        country: '',
+        address: '',
+        interest: '',
+        receiveNews: false,
+        files: []
     }
 }
 

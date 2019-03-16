@@ -1,6 +1,5 @@
 // Modules
 import React, { Component } from 'react';
-import './App.css';
 
 // Router
 import MyRouter from '../../router/router';
