@@ -47,6 +47,8 @@ const primaryTheme = {
     rounded: {
         none: "0",
         sm: "3px",
+        mdLeft: "5px 0 0 5px",
+        mdRight: "0 5px 5px 0",
         md: "5px",
         lg: "10px",
         full: "100%"

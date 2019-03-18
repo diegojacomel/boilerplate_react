@@ -4,13 +4,18 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const InputStyled = styled('input')`
-    &[type='text'] {
+    &[type='text'],
+    &[type='number'],
+    &[type='phone'],
+    &[type='email'] {
         display: inline-block;
         outline: none;
         padding: 8px 12px;
         font-size: 16px;
         border-radius: 5px;
         border: 1px solid #cccccc;
+        width: 100%;
+        box-sizing: border-box;
     }
 `
 

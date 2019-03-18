@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // Components
-import Button from '../../components/Button/Button'; 
+import InputButton from '../../components/InputButton/InputButton';
 
 const HomeWrapper = styled('main')`
     display: flex;
@@ -18,9 +18,7 @@ class Home extends Component {
     render() {
         return (
             <HomeWrapper>
-                <Button color="default" rounded="md" size="xg" linkTo="/register">
-                    Home
-                </Button>
+                <InputButton side="right" />
             </HomeWrapper>
         );
     }

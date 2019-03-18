@@ -1,13 +1,11 @@
-// Modules
-import asyncComponent from './asyncComponent';
+// Containers
+import Home from '../containers/Home/Home';
 
-// Home
-const Home = asyncComponent(() => import('../containers/Home/Home'));
-const Register = asyncComponent(() => import('../containers/Register/Register'));
-
-const routerComponents = {
-    'Home': Home,
-    'Register': Register
-}
+const routerComponents = [
+    {
+        'route': '/',
+        'component': Home
+    }
+]
 
 export default routerComponents;
