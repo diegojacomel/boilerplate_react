@@ -23,7 +23,7 @@ import { ThemeProvider } from 'styled-components';
 import { primaryTheme } from './styles/themes';
 
 // Router
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
@@ -36,11 +36,11 @@ sagaMiddleware.run(rootSagas);
 
 ReactDOM.render(
     <Provider store={store}>
-        <HashRouter>
+        <BrowserRouter>
             <ThemeProvider theme={primaryTheme}>
                 <App />
             </ThemeProvider>
-        </HashRouter>
+        </BrowserRouter>
     </Provider>
 , document.getElementById('root'));
 
