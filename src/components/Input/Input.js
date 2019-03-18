@@ -1,13 +1,13 @@
 // Modules
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import InputMask from 'react-input-mask';
 
-const InputStyled = styled('input')`
+const InputStyled = styled(InputMask)`
     &[type='text'],
-    &[type='number'],
-    &[type='phone'],
-    &[type='email'] {
+    &[type='email'],
+    &[type='phone'] {
         display: inline-block;
         outline: none;
         padding: 8px 12px;
@@ -19,19 +19,32 @@ const InputStyled = styled('input')`
     }
 `
 
-const Input = ({ type, name, onChange, onBlur, onKeyUp, placeholder, value, disabled, id, ...rest }) => (
-    <InputStyled
-        type={type}
-        name={name}
-        onChange={onChange}
-        onBlur={onBlur}
-        onKeyUp={onKeyUp}
-        placeholder={placeholder}
-        value={value}
-        disabled={disabled}
-        id={id}
-        {...rest}
-    />
+const MessageValidation = styled('div')`
+    font-size: 12px;
+    color: #d30;
+`
+
+const Input = ({ type, name, onChange, onBlur, onKeyUp, placeholder, value, disabled, id, mask, errors, touched, ...rest }) => (
+    <Fragment>   
+        <InputStyled
+            type={type}
+            name={name}
+            onChange={onChange}
+            onBlur={onBlur}
+            onKeyUp={onKeyUp}
+            placeholder={placeholder}
+            value={value}
+            disabled={disabled}
+            id={id}
+            mask={mask}
+            {...rest}
+        />
+        {errors && touched &&
+            <MessageValidation>
+                {errors}
+            </MessageValidation>
+        }
+    </Fragment>
 )
 
 Input.propTypes = {

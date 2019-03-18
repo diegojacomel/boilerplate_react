@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // Components
-import InputButton from '../../components/InputButton/InputButton';
+import ProgressBar from '../../components/ProgressBar/ProgressBar';
 
 const HomeWrapper = styled('main')`
     display: flex;
@@ -18,7 +18,13 @@ class Home extends Component {
     render() {
         return (
             <HomeWrapper>
-                <InputButton side="right" />
+                <ProgressBar
+                    sqSize={250}
+                    strokeWidth={15}
+                    initialPercentage={0}
+                    percentage={50}
+                    color="primary"
+                />
             </HomeWrapper>
         );
     }

@@ -1,4 +1,4 @@
-## Basic usage
+### Basic usage
 
 ```js
 <Label for="inputName">
