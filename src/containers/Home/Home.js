@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // Components
-import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import AutoComplete from '../../components/AutoComplete/AutoComplete';
 
 const HomeWrapper = styled('main')`
     display: flex;
@@ -18,12 +18,8 @@ class Home extends Component {
     render() {
         return (
             <HomeWrapper>
-                <ProgressBar
-                    sqSize={250}
-                    strokeWidth={15}
-                    initialPercentage={0}
-                    percentage={50}
-                    color="primary"
+                <AutoComplete
+                    arrayContent={['Diego', 'Daniel', 'Neto', 'Vitor', 'Anderson', 'Russo', 'Karla', 'Luca', 'Pira']}
                 />
             </HomeWrapper>
         );

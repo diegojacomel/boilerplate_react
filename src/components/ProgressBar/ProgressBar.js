@@ -47,7 +47,7 @@ class ProgressBar extends Component {
                 this.setState({
                     dashOffset: (((this.props.sqSize - this.props.strokeWidth) / 2) * Math.PI * 2) - (((this.props.sqSize - this.props.strokeWidth) / 2) * Math.PI * 2) * count / 100
                 })
-            }, 200)
+            }, 500)
         }
     }
 
