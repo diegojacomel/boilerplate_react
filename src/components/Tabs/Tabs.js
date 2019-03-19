@@ -22,7 +22,7 @@ const TabItem = styled('button')`
 `
 
 const DescriptionItem = styled('div')`
-    border: 1px solid #cccccc;
+    border: 2px solid #cccccc;
     border-radius: 0 10px 10px;
     min-width: 280px;
     max-width: 100%;
