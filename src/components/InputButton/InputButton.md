@@ -12,6 +12,7 @@ type: string
 
 ```js
 <InputButton
+    icon="home"
     side="left"
     inputChange={e => console.log(e.target.value)}
     buttonClick={() => console.log('button clicked')}
@@ -22,6 +23,7 @@ type: string
 
 ```js
 <InputButton
+    icon="home"
     side="right"
     inputChange={e => console.log(e.target.value)}
     buttonClick={() => console.log('button clicked')}

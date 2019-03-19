@@ -4,22 +4,31 @@ import { pxToRem } from '../utils/scale';
 // Themes
 const primaryTheme = {
     colors: {
-        primary: "#54a0ff",
-        danger: "#ff6b6b",
-        info: "#48dbfb",
-        success: "#1dd1a1",
-        default: "#576574",
+        primary: "#1a81ff",
+        danger: "#ff3333",
+        info: "#05cdfa",
+        success: "#159d79",
+        default: "#373f49",
         white: "#ffffff",
-        black: "#000000",
+        black: "#1a1a1a",
         greyLight: "#f2f2f2",
         greyMedium: "#999999",
         greyDark: "#333333",
         hover: {
-            primary: "#1a81ff",
-            danger: "#ff3333",
-            info: "#05cdfa",
-            success: "#159d79",
-            default: "#373f49",
+            primary: "#54a0ff",
+            danger: "#ff6b6b",
+            info: "#48dbfb",
+            success: "#18bb90",
+            default: "#576574",
+            white: "#ffffff",
+            black: "#000000"
+        },
+        active: {
+            primary: "#0069ed",
+            danger: "#9e0000",
+            info: "#05b2d8",
+            success: "#11775c",
+            default: "#111111",
             white: "#f2f2f2",
             black: "#1a1a1a"
         }

@@ -16,7 +16,7 @@ const InputStyled = styled(Input)`
     order: ${props => props.side === "left" ? 1 : 0};
 `
 
-const InputButton = ({ side, inputType, inputName, inputId, inputValue, inputPlaceholder, inputDisabled, inputChange, inputKeyUp, inputBlur, typeButton, buttonColor, buttonClick, buttonSubmit, iconButton, iconButtonColor, iconButtonSize }) => (
+const InputButton = ({ side, inputType, inputName, inputId, inputValue, inputPlaceholder, inputDisabled, inputChange, inputKeyUp, inputBlur, typeButton, buttonColor, buttonClick, buttonSubmit, iconButton, iconButtonColor, iconButtonSize, ...rest }) => (
     <InputButtonWrapper>
         <InputStyled
             type={inputType}
@@ -29,6 +29,7 @@ const InputButton = ({ side, inputType, inputName, inputId, inputValue, inputPla
             onChange={inputChange}
             onKeyUp={inputKeyUp}
             onBlur={inputBlur}
+            {...rest}
         />
         <Button
             type={typeButton}

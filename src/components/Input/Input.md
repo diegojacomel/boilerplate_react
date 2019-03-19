@@ -15,13 +15,27 @@
 
 ## Props
 
-#### **type**
+#### **icon**
 
-The type attribute specifies the type of input.
+```js
+<Input
+    icon="home"
+    type="text"
+    name="example"
+    id="example"
+    placeholder="Digite um texto"
+    onChange={() => console.log('onChange')}
+    onBlur={() => console.log('onBlur')}
+    onKeyUp={() => console.log('onKeyUp')}
+    disabled={false}
+/>
+```
+
+The icon attribute define the icon that will be appear inside the input element.
 
 type: string
 
-#### **name**
+#### **type**
 
 The name attribute specifies the name of input.
 

@@ -18,6 +18,9 @@ const AutoCompleteWrapper = styled('div')`
     display: block;
     position: relative;
     width: 100%;
+    input[type='text'] {
+        border-radius: ${props => !props.showOptions ? '5px' : '5px 5px 0 0'};
+    }
 `
 
 const AutoCompleteStyled = styled('div')`
@@ -28,7 +31,6 @@ const AutoCompleteStyled = styled('div')`
 const ResponseWrapper = styled('div')`
     border-top: none;
     position: relative;
-    top: 100%;
     width: 100%;
     max-height: 200px;
 `
@@ -36,7 +38,7 @@ const ResponseWrapper = styled('div')`
 const ResponseItemWrapper = styled('button')`
     display: block;
     list-style-type: none;
-    padding: 10px 5px;
+    padding: 10px;
     width: 100%;
     border: none;
     border-bottom: 1px solid #cccccc;
@@ -46,6 +48,8 @@ const ResponseItemWrapper = styled('button')`
     text-align: left;
     outline: none;
     background: #ffffff;
+    font-size: 14px;
+    color: #333333;
     cursor: pointer;
     &:first-child {
         border-top: none;
@@ -111,11 +115,11 @@ class AutoComplete extends Component {
     }
 
     render() {
-        const { state } = this;
+        const { state, props: { arrayContent, ...rest } } = this;
 
         return (
             <Wrapper>
-                <AutoCompleteWrapper>
+                <AutoCompleteWrapper showOptions={state.showOptions}>
                     <AutoCompleteStyled>
                         <Input
                             type="text"
@@ -124,6 +128,8 @@ class AutoComplete extends Component {
                             onFocus={() => this.handleFocus()}
                             onBlur={() => this.handleBlur()}
                             value={state.typed}
+                            arrayContent={arrayContent}
+                            {...rest}
                         />
                         {state.showOptions
                             ?

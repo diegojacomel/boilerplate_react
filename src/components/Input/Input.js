@@ -1,8 +1,16 @@
 // Modules
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
+
+// Components
+import Icon from '../Icon/Icon';
+
+const InputWrapper = styled('div')`
+    position: relative;
+    width: 100%;
+`
 
 const InputStyled = styled(InputMask)`
     &[type='text'],
@@ -10,7 +18,7 @@ const InputStyled = styled(InputMask)`
     &[type='phone'] {
         display: inline-block;
         outline: none;
-        padding: 8px 12px;
+        padding: ${props => props.icon === undefined ? '8px 12px' : '8px 12px 8px 35px'};
         font-size: 16px;
         border-radius: 5px;
         border: 1px solid #cccccc;
@@ -19,14 +27,35 @@ const InputStyled = styled(InputMask)`
     }
 `
 
+const IconStyled = styled('div')`
+    position: absolute;
+    color: #cccccc;
+    left: 10px;
+    top: 10px;
+    svg {
+        fill: #666666;
+    }
+`
+
 const MessageValidation = styled('div')`
     font-size: 12px;
     color: #d30;
 `
 
-const Input = ({ type, name, onChange, onBlur, onKeyUp, placeholder, value, disabled, id, mask, errors, touched, ...rest }) => (
-    <Fragment>   
+const Input = ({ icon, type, name, onChange, onBlur, onKeyUp, placeholder, value, disabled, id, mask, errors, touched, ...rest }) => (
+    <InputWrapper {...rest}>
+        {icon
+            ?
+            <IconStyled>
+                <Icon
+                    tag={icon}
+                />
+            </IconStyled>
+            :
+            null
+        }
         <InputStyled
+            icon={icon}
             type={type}
             name={name}
             onChange={onChange}
@@ -44,10 +73,11 @@ const Input = ({ type, name, onChange, onBlur, onKeyUp, placeholder, value, disa
                 {errors}
             </MessageValidation>
         }
-    </Fragment>
+    </InputWrapper>
 )
 
 Input.propTypes = {
+    icon: PropTypes.string,
     type: PropTypes.string,
     name: PropTypes.string,
     onChange: PropTypes.func,
@@ -58,6 +88,7 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
+    icon: undefined,
     type: 'text',
     onChange: () => {},
     onBlur: () => {},

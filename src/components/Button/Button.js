@@ -13,10 +13,10 @@ const OutlineButton = (theme, outline, color) => {
     if (outline) {
         return `
             border: 1px solid ${color};
+            border-bottom: ${({ showShadow }) => showShadow ? `none` : ``};
             background-color: ${theme.colors.white};
             color: ${color};
             &:hover {
-                border: 1px solid ${theme.colors.white};
                 background-color: ${color};
                 color: ${theme.colors.white};
             }
@@ -60,7 +60,6 @@ const SizeButton = (props) => {
 
 const ButtonStyle = styled('button')`
     text-align: center;
-    cursor: pointer;
     outline: none;
     border: none;
     line-height: 1;
@@ -72,8 +71,18 @@ const ButtonStyle = styled('button')`
     font-size: ${({theme, size}) => theme.fontSize[size]};
     ${({ theme, outline, color }) => OutlineButton(theme, outline, theme.colors[color])};
     ${props => SizeButton(props)};
+    position: relative;
+    top: 0;
+    transition: all 0.2s;
+    box-shadow: ${({ theme, color, showShadow }) => showShadow ? `0 5px 0 ${theme.colors.active[color]}` : `0 0 0 ${theme.colors.active[color]}`};
+    cursor: pointer;
     &:hover {
         ${({ theme, outline, color }) => OutlineButton(theme, outline, theme.colors.hover[color])};
+        
+    }
+    :active {
+        top: ${({ showShadow }) => showShadow ? `5px` : '0'};
+        box-shadow: 0 0 0 ${({ theme, color }) => theme.colors.active[color]};
     }
     &:last-child {
         margin-right: 0;
@@ -95,7 +104,7 @@ const LinkStyle = styled(Link)`
     color: inherit;
 `
 
-const Button = ({ children, type, color, outline, size, rounded, block, icon, iconSize, iconColor, iconLeft, disabled, onClick, linkTo }) => (
+const Button = ({ children, type, color, outline, size, rounded, block, icon, iconSize, iconColor, iconLeft, disabled, onClick, linkTo, showShadow }) => (
     <ButtonStyle
         type={type}
         color={color}
@@ -106,6 +115,7 @@ const Button = ({ children, type, color, outline, size, rounded, block, icon, ic
         iconLeft={iconLeft}
         onClick={onClick}
         disabled={disabled}
+        showShadow={showShadow}
         id="testButton"
     >
         {!!linkTo
@@ -147,7 +157,8 @@ Button.propTypes = {
     iconColor: PropTypes.string,
     disabled: PropTypes.bool,
     linkTo: PropTypes.string,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    showShadow: PropTypes.bool
 }
 
 Button.defaultProps = {
@@ -155,11 +166,12 @@ Button.defaultProps = {
     color: 'default',
     outline: false,
     size: 'md',
-    rounded: 'sm',
+    rounded: 'lg',
     block: false,
     disabled: false,
     linkTo: null,
-    onClick: () => console.log('clicked button')
+    onClick: () => console.log('clicked button'),
+    showShadow: false
 }
 
 export default Button;

@@ -33,5 +33,6 @@ const arrayContent = [
 
 <AutoComplete
     arrayContent={arrayContent}
+    icon="search"
 />
 ```

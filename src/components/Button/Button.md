@@ -34,6 +34,22 @@ type: string
 </div>
 ```
 
+#### **withShadow**
+
+It define the button animation scheme.
+
+type: bool
+
+```js
+<div>
+    <Button color="primary" showShadow>primary</Button>
+    <Button color="danger" showShadow>danger</Button>
+    <Button color="info" showShadow>info</Button>
+    <Button color="success" showShadow>success</Button>
+    <Button color="default" showShadow>default</Button>
+</div>
+```
+
 #### **outline**
 
 It define if the button is outline or filled.
