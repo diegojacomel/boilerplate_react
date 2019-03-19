@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import Input from '../Input/Input';
 
 // Styles custom scroll
-import './AutoComplete.css';
+import 'react-custom-scroll/dist/customScroll.css';
 
 const Wrapper = styled('div')`
     height: 35px;
