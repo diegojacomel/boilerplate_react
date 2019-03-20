@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 // Components
 import Container from '../../components/Container/Container';
+import IsLoading from '../../components/IsLoading/IsLoading';
 
 const HomeWrapper = styled('main')`
     display: flex;
@@ -19,7 +20,9 @@ class Home extends Component {
         return (
             <HomeWrapper>
                 <Container>
-                    Home
+                    <IsLoading
+                        isLoading={true}
+                    />
                 </Container>
             </HomeWrapper>
         );
